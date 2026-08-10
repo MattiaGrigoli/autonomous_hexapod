@@ -1,0 +1,2633 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/6be3fc1b9e0787ce80b2623a/w/bfc069d540cbe0a64ad13375/e/e9dcb14bb7e331ea058bee26 -->
+<robot name="big_hexapod">
+  <!-- Link base_link_2 -->
+  <link name="base_link_2">
+    <inertial>
+      <origin xyz="-1.19252e-07 -0.0173565 0.000659493" rpy="0 0 0"/>
+      <mass value="0.233494"/>
+      <inertia ixx="0.000752837" ixy="1.527e-09" ixz="3.95e-10" iyy="0.000931158" iyz="4.11461e-07" izz="0.000697545"/>
+    </inertial>
+    <!-- Part bottomplate -->
+    <visual>
+      <origin xyz="0 -0.0599999 0" rpy="0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bottomplate.stl"/>
+      </geometry>
+      <material name="bottomplate_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0599999 0" rpy="0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bottomplate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular -->
+    <visual>
+      <origin xyz="-0.055 0 0.076" rpy="0 -0.944351 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 0.076" rpy="0 -0.944351 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_2 -->
+    <visual>
+      <origin xyz="-0.085 0 0" rpy="3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.085 0 0" rpy="3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_3 -->
+    <visual>
+      <origin xyz="0.055 -0 -0.076" rpy="-3.14159 0.944351 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_3_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.055 -0 -0.076" rpy="-3.14159 0.944351 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servosupport -->
+    <visual>
+      <origin xyz="-0 0.005 -0.083" rpy="-3.14159 0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/servosupport.stl"/>
+      </geometry>
+      <material name="servosupport_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.005 -0.083" rpy="-3.14159 0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/servosupport.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_4 -->
+    <visual>
+      <origin xyz="0.085 0 0" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_4_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.085 0 0" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_5 -->
+    <visual>
+      <origin xyz="-0.055 -0 -0.076" rpy="-0 0.944351 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_5_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 -0 -0.076" rpy="-0 0.944351 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part topplate -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/topplate.stl"/>
+      </geometry>
+      <material name="topplate_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/topplate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_6 -->
+    <visual>
+      <origin xyz="0.055 0 0.076" rpy="3.14159 -0.944351 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_6_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.055 0 0.076" rpy="3.14159 -0.944351 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part batteryholder -->
+    <visual>
+      <origin xyz="-0.0215 -0.0349999 -0.00075" rpy="-1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/batteryholder.stl"/>
+      </geometry>
+      <material name="batteryholder_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0215 -0.0349999 -0.00075" rpy="-1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/batteryholder.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part batterysupport -->
+    <visual>
+      <origin xyz="0 -0.0349999 0.007" rpy="-0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/batterysupport.stl"/>
+      </geometry>
+      <material name="batterysupport_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0349999 0.007" rpy="-0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/batterysupport.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part batteryholder_2 -->
+    <visual>
+      <origin xyz="0.0215 -0.0349999 -0.00075" rpy="-1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/batteryholder.stl"/>
+      </geometry>
+      <material name="batteryholder_2_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0215 -0.0349999 -0.00075" rpy="-1.5708 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/batteryholder.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part logo_plate1 -->
+    <visual>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate1.stl"/>
+      </geometry>
+      <material name="logo_plate1_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part logo_plate4 -->
+    <visual>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate4.stl"/>
+      </geometry>
+      <material name="logo_plate4_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part logo_plate2 -->
+    <visual>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate2.stl"/>
+      </geometry>
+      <material name="logo_plate2_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part logo_plate3 -->
+    <visual>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate3.stl"/>
+      </geometry>
+      <material name="logo_plate3_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.035 -0" rpy="1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/logo_plate3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Frame base_link (dummy link + fixed joint) -->
+  <link name="base_link">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="base_link_frame" type="fixed">
+    <origin xyz="0 -0.0299999 0.00205788" rpy="-1.5708 -1.5708 0"/>
+    <parent link="base_link_2"/>
+    <child link="base_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame imu (dummy link + fixed joint) -->
+  <link name="imu">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="imu_frame" type="fixed">
+    <origin xyz="-0.0083064 0.00833695 -0.039948" rpy="-1.5708 -0 0"/>
+    <parent link="base_link_2"/>
+    <child link="imu"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Link coxaml -->
+  <link name="coxaml">
+    <inertial>
+      <origin xyz="0.0105732 0.016596 -0.0264025" rpy="0 0 0"/>
+      <mass value="0.082623"/>
+      <inertia ixx="4.01323e-05" ixy="-2.33345e-06" ixz="-4.90162e-07" iyy="2.74452e-05" iyz="2.09445e-06" izz="3.9625e-05"/>
+    </inertial>
+    <!-- Part topcoxa -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0144" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+      <material name="topcoxa_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0144" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bottomcoxa -->
+    <visual>
+      <origin xyz="0.00249997 0.033 -0.0294" rpy="1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+      <material name="bottomcoxa_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00249997 0.033 -0.0294" rpy="1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_2 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_2_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_2 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_2_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_2 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_2 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_2_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link femurml -->
+  <link name="femurml">
+    <inertial>
+      <origin xyz="0.0427903 -0.0139281 -0.00394246" rpy="0 0 0"/>
+      <mass value="0.0144792"/>
+      <inertia ixx="1.91001e-06" ixy="3.95825e-06" ixz="0" iyy="1.27823e-05" iyz="-0" izz="1.45894e-05"/>
+    </inertial>
+    <!-- Part acoplecircular_7 -->
+    <visual>
+      <origin xyz="0.0855806 -0.0278562 -0.0019" rpy="1.5708 0 2.56836"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_7_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0855806 -0.0278562 -0.0019" rpy="1.5708 0 2.56836"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_8 -->
+    <visual>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_8_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part femur -->
+    <visual>
+      <origin xyz="0.0427903 -0.0139281 -0.0069" rpy="0 0 -0.314681"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+      <material name="femur_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0427903 -0.0139281 -0.0069" rpy="0 0 -0.314681"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link tibiaml -->
+  <link name="tibiaml">
+    <inertial>
+      <origin xyz="0.0168324 -3.78781e-05 -0.0222966" rpy="0 0 0"/>
+      <mass value="0.0425984"/>
+      <inertia ixx="7.26686e-06" ixy="4.51097e-07" ixz="-3.00842e-06" iyy="3.03744e-05" iyz="1.6772e-08" izz="2.67985e-05"/>
+    </inertial>
+    <!-- Part tibia -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+      <material name="tibia_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_3 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_3_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_3 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_3_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_3 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_3_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_3 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_3_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from femurml to tibiaml -->
+  <joint name="motor10" type="revolute">
+    <origin xyz="0.0855806 -0.0278562 -0" rpy="-3.14159 -0 -0.296706"/>
+    <parent link="femurml"/>
+    <child link="tibiaml"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from coxaml to femurml -->
+  <joint name="motor11" type="revolute">
+    <origin xyz="-0.0119 0.033 -0.0394" rpy="1.5708 -0.296706 1.5708"/>
+    <parent link="coxaml"/>
+    <child link="femurml"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to coxaml -->
+  <joint name="motor12" type="revolute">
+    <origin xyz="-0.085 -0.0019 0" rpy="-1.5708 1.5708 0"/>
+    <parent link="base_link_2"/>
+    <child link="coxaml"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link coxabl -->
+  <link name="coxabl">
+    <inertial>
+      <origin xyz="0.0105732 0.016596 -0.0264025" rpy="0 0 0"/>
+      <mass value="0.082623"/>
+      <inertia ixx="4.01323e-05" ixy="-2.33345e-06" ixz="-4.90162e-07" iyy="2.74452e-05" iyz="2.09445e-06" izz="3.9625e-05"/>
+    </inertial>
+    <!-- Part bottomcoxa_2 -->
+    <visual>
+      <origin xyz="0.00249997 0.033 -0.0294" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+      <material name="bottomcoxa_2_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00249997 0.033 -0.0294" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part topcoxa_2 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0144" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+      <material name="topcoxa_2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0144" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_4 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_4_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_4 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_4_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_4 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_4_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_4 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_4_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_5 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_5_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_5 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_5_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_5 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_5_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_5 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_5_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link femurbl -->
+  <link name="femurbl">
+    <inertial>
+      <origin xyz="0.0414881 0.0174281 -0.00394246" rpy="0 0 0"/>
+      <mass value="0.0144792"/>
+      <inertia ixx="2.63889e-06" ixy="-4.8022e-06" ixz="-0" iyy="1.20534e-05" iyz="0" izz="1.45894e-05"/>
+    </inertial>
+    <!-- Part femur_2 -->
+    <visual>
+      <origin xyz="0.0414881 0.0174281 -0.0069" rpy="-0 -0 0.397691"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+      <material name="femur_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0414881 0.0174281 -0.0069" rpy="-0 -0 0.397691"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_9 -->
+    <visual>
+      <origin xyz="0.0829762 0.0348561 -0.0019" rpy="1.5708 -0 -1.13231"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_9_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0829762 0.0348561 -0.0019" rpy="1.5708 -0 -1.13231"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_10 -->
+    <visual>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_10_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link tibiabl -->
+  <link name="tibiabl">
+    <inertial>
+      <origin xyz="0.0168324 -3.78781e-05 -0.0222966" rpy="0 0 0"/>
+      <mass value="0.0425984"/>
+      <inertia ixx="7.26686e-06" ixy="4.51097e-07" ixz="-3.00842e-06" iyy="3.03744e-05" iyz="1.6772e-08" izz="2.67985e-05"/>
+    </inertial>
+    <!-- Part tibia_2 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+      <material name="tibia_2_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_6 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_6_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_6 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_6_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_6 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_6_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_6 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_6_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from femurbl to tibiabl -->
+  <joint name="motor31" type="revolute">
+    <origin xyz="0.0829762 0.0348561 -0" rpy="3.14159 -0 0.383972"/>
+    <parent link="femurbl"/>
+    <child link="tibiabl"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from coxabl to femurbl -->
+  <joint name="motor8" type="revolute">
+    <origin xyz="-0.0119 0.033 -0.0394" rpy="1.5708 0.383972 1.5708"/>
+    <parent link="coxabl"/>
+    <child link="femurbl"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to coxabl -->
+  <joint name="motor9" type="revolute">
+    <origin xyz="-0.055 -0.0019 0.076" rpy="1.5708 0.626445 -3.14159"/>
+    <parent link="base_link_2"/>
+    <child link="coxabl"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link coxabr -->
+  <link name="coxabr">
+    <inertial>
+      <origin xyz="0.0105732 -0.016596 -0.0264025" rpy="0 0 0"/>
+      <mass value="0.082623"/>
+      <inertia ixx="4.01323e-05" ixy="2.33345e-06" ixz="-4.90162e-07" iyy="2.74452e-05" iyz="-2.09445e-06" izz="3.9625e-05"/>
+    </inertial>
+    <!-- Part topcoxa_3 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0094" rpy="-1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+      <material name="topcoxa_3_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0094" rpy="-1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bottomcoxa_3 -->
+    <visual>
+      <origin xyz="-0.00250003 -0.033 -0.0294" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+      <material name="bottomcoxa_3_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00250003 -0.033 -0.0294" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_7 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_7_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_7 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_7_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_7 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_7_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_7 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_7_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_8 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_8_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_8 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_8_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_8 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_8_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_8 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_8_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link femurbr -->
+  <link name="femurbr">
+    <inertial>
+      <origin xyz="0.0414881 -0.0174281 -0.00394246" rpy="0 0 0"/>
+      <mass value="0.0144792"/>
+      <inertia ixx="2.63889e-06" ixy="4.8022e-06" ixz="-0" iyy="1.20534e-05" iyz="-0" izz="1.45894e-05"/>
+    </inertial>
+    <!-- Part acoplecircular_11 -->
+    <visual>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_11_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part femur_3 -->
+    <visual>
+      <origin xyz="0.0414881 -0.0174281 -0.0069" rpy="0 -0 -0.397691"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+      <material name="femur_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0414881 -0.0174281 -0.0069" rpy="0 -0 -0.397691"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_12 -->
+    <visual>
+      <origin xyz="0.0829762 -0.0348561 -0.0019" rpy="1.5708 -0 1.13231"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_12_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0829762 -0.0348561 -0.0019" rpy="1.5708 -0 1.13231"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link tibiabr -->
+  <link name="tibiabr">
+    <inertial>
+      <origin xyz="0.0168324 3.7861e-05 -0.0222966" rpy="0 0 0"/>
+      <mass value="0.0425984"/>
+      <inertia ixx="7.26686e-06" ixy="-4.51098e-07" ixz="-3.00842e-06" iyy="3.03744e-05" iyz="-1.6771e-08" izz="2.67985e-05"/>
+    </inertial>
+    <!-- Part tibia_3 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+      <material name="tibia_3_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_9 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_9_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_9 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_9_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_9 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_9_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_9 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_9_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from femurbr to tibiabr -->
+  <joint name="motor27" type="revolute">
+    <origin xyz="0.0829762 -0.0348561 -0" rpy="-3.14159 -0 -0.383972"/>
+    <parent link="femurbr"/>
+    <child link="tibiabr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from coxabr to femurbr -->
+  <joint name="motor23" type="revolute">
+    <origin xyz="-0.0119 -0.033 -0.0394" rpy="-1.5708 0.383972 -1.5708"/>
+    <parent link="coxabr"/>
+    <child link="femurbr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to coxabr -->
+  <joint name="motor22" type="revolute">
+    <origin xyz="0.055 -0.0019 0.076" rpy="-1.5708 0.626445 -0"/>
+    <parent link="base_link_2"/>
+    <child link="coxabr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link coxamr -->
+  <link name="coxamr">
+    <inertial>
+      <origin xyz="0.0105732 -0.016596 -0.0264025" rpy="0 0 0"/>
+      <mass value="0.082623"/>
+      <inertia ixx="4.01323e-05" ixy="2.33345e-06" ixz="-4.90162e-07" iyy="2.74452e-05" iyz="-2.09445e-06" izz="3.9625e-05"/>
+    </inertial>
+    <!-- Part bottomcoxa_4 -->
+    <visual>
+      <origin xyz="-0.00250003 -0.033 -0.0294" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+      <material name="bottomcoxa_4_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00250003 -0.033 -0.0294" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part topcoxa_4 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0094" rpy="-1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+      <material name="topcoxa_4_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0094" rpy="-1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_10 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_10_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_10 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_10_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_10 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_10_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_10 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_10_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_11 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_11_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_11 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_11_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_11 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_11_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_11 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_11_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link femurmr -->
+  <link name="femurmr">
+    <inertial>
+      <origin xyz="0.045 0 -0.00394246" rpy="0 0 0"/>
+      <mass value="0.0144792"/>
+      <inertia ixx="6.21615e-07" ixy="-0" ixz="0" iyy="1.40707e-05" iyz="0" izz="1.45894e-05"/>
+    </inertial>
+    <!-- Part acoplecircular_13 -->
+    <visual>
+      <origin xyz="0.09 0 -0.0019" rpy="1.5708 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_13_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.09 0 -0.0019" rpy="1.5708 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part femur_4 -->
+    <visual>
+      <origin xyz="0.045 0 -0.0019" rpy="-3.14159 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+      <material name="femur_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.045 0 -0.0019" rpy="-3.14159 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_14 -->
+    <visual>
+      <origin xyz="-0 -0 -0.0019" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_14_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 -0 -0.0019" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link tibiamr -->
+  <link name="tibiamr">
+    <inertial>
+      <origin xyz="0.0168324 3.7861e-05 -0.0222966" rpy="0 0 0"/>
+      <mass value="0.0425984"/>
+      <inertia ixx="7.26686e-06" ixy="-4.51098e-07" ixz="-3.00842e-06" iyy="3.03744e-05" iyz="-1.6771e-08" izz="2.67985e-05"/>
+    </inertial>
+    <!-- Part tibia_4 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+      <material name="tibia_4_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_12 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_12_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_12 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_12_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_12 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_12_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_12 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_12_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from femurmr to tibiamr -->
+  <joint name="motor21" type="revolute">
+    <origin xyz="0.09 0 -0" rpy="3.14159 0 -0.0147262"/>
+    <parent link="femurmr"/>
+    <child link="tibiamr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from coxamr to femurmr -->
+  <joint name="motor20" type="revolute">
+    <origin xyz="-0.0119 -0.033 -0.0394" rpy="-1.5708 0.0147262 -1.5708"/>
+    <parent link="coxamr"/>
+    <child link="femurmr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to coxamr -->
+  <joint name="motor19" type="revolute">
+    <origin xyz="0.085 -0.0019 0" rpy="-1.5708 1.5708 0"/>
+    <parent link="base_link_2"/>
+    <child link="coxamr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link coxafr -->
+  <link name="coxafr">
+    <inertial>
+      <origin xyz="0.0105732 -0.016596 -0.0264025" rpy="0 0 0"/>
+      <mass value="0.082623"/>
+      <inertia ixx="4.01323e-05" ixy="2.33345e-06" ixz="-4.90162e-07" iyy="2.74452e-05" iyz="-2.09445e-06" izz="3.9625e-05"/>
+    </inertial>
+    <!-- Part bottomcoxa_5 -->
+    <visual>
+      <origin xyz="-0.00250003 -0.033 -0.0294" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+      <material name="bottomcoxa_5_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00250003 -0.033 -0.0294" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part topcoxa_5 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0094" rpy="-1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+      <material name="topcoxa_5_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0094" rpy="-1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_13 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_13_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_13 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_13_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_13 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_13_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_13 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_13_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_14 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_14_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_14 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_14_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_14 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_14_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_14 -->
+    <visual>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_14_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 -0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link femurfr -->
+  <link name="femurfr">
+    <inertial>
+      <origin xyz="-0 -0.045 -0.00394246" rpy="0 0 0"/>
+      <mass value="0.0144792"/>
+      <inertia ixx="1.40707e-05" ixy="-0" ixz="0" iyy="6.21615e-07" iyz="0" izz="1.45894e-05"/>
+    </inertial>
+    <!-- Part acoplecircular_15 -->
+    <visual>
+      <origin xyz="-0 -0.09 -0.0019" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_15_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 -0.09 -0.0019" rpy="1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part femur_5 -->
+    <visual>
+      <origin xyz="-0 -0.045 -0.0019" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+      <material name="femur_5_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 -0.045 -0.0019" rpy="-3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_16 -->
+    <visual>
+      <origin xyz="0 0 -0.0019" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_16_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0019" rpy="1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link tibiafr -->
+  <link name="tibiafr">
+    <inertial>
+      <origin xyz="0.0168324 3.7861e-05 -0.0222966" rpy="0 0 0"/>
+      <mass value="0.0425984"/>
+      <inertia ixx="7.26686e-06" ixy="-4.51098e-07" ixz="-3.00842e-06" iyy="3.03744e-05" iyz="-1.6771e-08" izz="2.67985e-05"/>
+    </inertial>
+    <!-- Part tibia_5 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+      <material name="tibia_5_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-3.14159 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_15 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_15_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_15 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_15_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_15 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_15_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_15 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_15_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from femurfr to tibiafr -->
+  <joint name="motor18" type="revolute">
+    <origin xyz="-0 -0.09 -0" rpy="-3.14159 -0 -1.5708"/>
+    <parent link="femurfr"/>
+    <child link="tibiafr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from coxafr to femurfr -->
+  <joint name="motor17" type="revolute">
+    <origin xyz="-0.0119 -0.033 -0.0394" rpy="-0 1.5708 0"/>
+    <parent link="coxafr"/>
+    <child link="femurfr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to coxafr -->
+  <joint name="motor16" type="revolute">
+    <origin xyz="0.055 -0.0019 -0.076" rpy="1.5708 0.626445 3.14159"/>
+    <parent link="base_link_2"/>
+    <child link="coxafr"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link coxafl -->
+  <link name="coxafl">
+    <inertial>
+      <origin xyz="0.0105732 0.016596 -0.0264025" rpy="0 0 0"/>
+      <mass value="0.082623"/>
+      <inertia ixx="4.01323e-05" ixy="-2.33345e-06" ixz="-4.90162e-07" iyy="2.74452e-05" iyz="2.09445e-06" izz="3.9625e-05"/>
+    </inertial>
+    <!-- Part topcoxa_6 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0144" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+      <material name="topcoxa_6_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0144" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/topcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bottomcoxa_6 -->
+    <visual>
+      <origin xyz="0.00249997 0.033 -0.0294" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+      <material name="bottomcoxa_6_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00249997 0.033 -0.0294" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/bottomcoxa.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_16 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_16_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_16 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_16_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_16 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_16_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_16 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_16_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_17 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_17_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_17 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_17_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_17 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_17_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_17 -->
+    <visual>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_17_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0251 0.033 -0.0294" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link femurfl -->
+  <link name="femurfl">
+    <inertial>
+      <origin xyz="-0 0.045 -0.00394246" rpy="0 0 0"/>
+      <mass value="0.0144792"/>
+      <inertia ixx="1.40707e-05" ixy="0" ixz="0" iyy="6.21615e-07" iyz="0" izz="1.45894e-05"/>
+    </inertial>
+    <!-- Part femur_6 -->
+    <visual>
+      <origin xyz="-0 0.045 -0.0069" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+      <material name="femur_6_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.045 -0.0069" rpy="-0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/femur.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_17 -->
+    <visual>
+      <origin xyz="-0 0.09 -0.0019" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_17_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0.09 -0.0019" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acoplecircular_18 -->
+    <visual>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+      <material name="acoplecircular_18_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.0019" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/acoplecircular.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link tibiafl -->
+  <link name="tibiafl">
+    <inertial>
+      <origin xyz="0.0168324 -3.78781e-05 -0.0222966" rpy="0 0 0"/>
+      <mass value="0.0425984"/>
+      <inertia ixx="7.26686e-06" ixy="4.51097e-07" ixz="-3.00842e-06" iyy="3.03744e-05" iyz="1.6772e-08" izz="2.67985e-05"/>
+    </inertial>
+    <!-- Part tibia_6 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+      <material name="tibia_6_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.0119" rpy="-0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/tibia.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo4_18 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+      <material name="bigservo4_18_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo3_18 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+      <material name="bigservo3_18_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo2_18 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+      <material name="bigservo2_18_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bigservo1_18 -->
+    <visual>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+      <material name="bigservo1_18_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00999997 -7.403e-09 -0.037" rpy="1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/bigservo1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from femurfl to tibiafl -->
+  <joint name="motor13" type="revolute">
+    <origin xyz="-0 0.09 -0" rpy="-3.14159 -0 1.5708"/>
+    <parent link="femurfl"/>
+    <child link="tibiafl"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from coxafl to femurfl -->
+  <joint name="motor14" type="revolute">
+    <origin xyz="-0.0119 0.033 -0.0394" rpy="0 1.5708 0"/>
+    <parent link="coxafl"/>
+    <child link="femurfl"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to coxafl -->
+  <joint name="motor15" type="revolute">
+    <origin xyz="-0.055 -0.0019 -0.076" rpy="-1.5708 0.626445 0"/>
+    <parent link="base_link_2"/>
+    <child link="coxafl"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link neck -->
+  <link name="neck">
+    <inertial>
+      <origin xyz="-0.0052 -0.00245004 -0.0267393" rpy="0 0 0"/>
+      <mass value="0.0239856"/>
+      <inertia ixx="5.63655e-06" ixy="-3.9842e-08" ixz="-1.13883e-07" iyy="6.26446e-06" iyz="-3.5041e-08" izz="2.69831e-06"/>
+    </inertial>
+    <!-- Part yawhead -->
+    <visual>
+      <origin xyz="-0.0052 0 -0.0116" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/yawhead.stl"/>
+      </geometry>
+      <material name="yawhead_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0052 0 -0.0116" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/yawhead.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part smallservo -->
+    <visual>
+      <origin xyz="-0.0052 0.0125 -0.0416" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/smallservo.stl"/>
+      </geometry>
+      <material name="smallservo_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0052 0.0125 -0.0416" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/smallservo.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part smallservo_2 -->
+    <visual>
+      <origin xyz="-0.0052 0 -0.0302" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/smallservo.stl"/>
+      </geometry>
+      <material name="smallservo_2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0052 0 -0.0302" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/smallservo.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part necksupport -->
+    <visual>
+      <origin xyz="-0.0052 -0.0111 -0.0516" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/necksupport.stl"/>
+      </geometry>
+      <material name="necksupport_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0052 -0.0111 -0.0516" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/necksupport.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link face -->
+  <link name="face">
+    <inertial>
+      <origin xyz="-0.00338941 -0.0244654 0.0131434" rpy="0 0 0"/>
+      <mass value="0.0345134"/>
+      <inertia ixx="1.16067e-05" ixy="-5.06469e-07" ixz="4.61645e-07" iyy="1.55511e-05" iyz="2.30014e-06" izz="1.05883e-05"/>
+    </inertial>
+    <!-- Part facesupport -->
+    <visual>
+      <origin xyz="-0.012 -0.024 0.0167" rpy="-1.5708 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/facesupport.stl"/>
+      </geometry>
+      <material name="facesupport_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.012 -0.024 0.0167" rpy="-1.5708 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/facesupport.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part camera_2 -->
+    <visual>
+      <origin xyz="0.0107972 -0.023 0.0167" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/camera.stl"/>
+      </geometry>
+      <material name="camera_2_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0107972 -0.023 0.0167" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/camera.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part faceplate -->
+    <visual>
+      <origin xyz="-0.012 -0.029 0.0167" rpy="-1.5708 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/faceplate.stl"/>
+      </geometry>
+      <material name="faceplate_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.012 -0.029 0.0167" rpy="-1.5708 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/faceplate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part headpitch -->
+    <visual>
+      <origin xyz="0 -0 -0.0068" rpy="3.14159 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/headpitch.stl"/>
+      </geometry>
+      <material name="headpitch_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.0068" rpy="3.14159 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/headpitch.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servosupport_2 -->
+    <visual>
+      <origin xyz="0 0 -0.0018" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servosupport.stl"/>
+      </geometry>
+      <material name="servosupport_2_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0018" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/servosupport.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2 -->
+    <visual>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl"/>
+      </geometry>
+      <material name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0123223 0.0223 0.0239775" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Frame camera (dummy link + fixed joint) -->
+  <link name="camera">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="camera_frame" type="fixed">
+    <origin xyz="0.0123472 -0.0288 0.0167" rpy="1.5708 -1.5708 0"/>
+    <parent link="face"/>
+    <child link="camera"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Frame ultrasonic (dummy link + fixed joint) -->
+  <link name="ultrasonic">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="ultrasonic_frame" type="fixed">
+    <origin xyz="-0.012 -0.0301724 0.0297" rpy="1.5708 -1.5708 0"/>
+    <parent link="face"/>
+    <child link="ultrasonic"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from neck to face -->
+  <joint name="motor0" type="revolute">
+    <origin xyz="-0.0104 -0.0177 -0.0416" rpy="-1.5708 -1.5708 0"/>
+    <parent link="neck"/>
+    <child link="face"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link_2 to neck -->
+  <joint name="motor1" type="revolute">
+    <origin xyz="-0 0.0068 -0.083" rpy="1.5708 -1.5708 0"/>
+    <parent link="base_link_2"/>
+    <child link="neck"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+</robot>
