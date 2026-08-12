@@ -1,3 +1,6 @@
 [submodule "freenove_original_code"]
 	path = freenove_original_code
 	url = https://github.com/Freenove/Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi
+[submodule "ros2_devcontainer"]
+	path = ros2_devcontainer
+	url = https://github.com/Robotics-Content-Lab/ros2_devcontainer.git
