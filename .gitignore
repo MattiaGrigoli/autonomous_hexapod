@@ -53,3 +53,9 @@ CATKIN_IGNORE
 
 #custom
 keys.sh
+*.log
+/install
+latest_build
+latest
+*.vc.*
+*.vscode
