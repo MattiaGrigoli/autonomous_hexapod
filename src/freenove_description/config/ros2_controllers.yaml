@@ -1,0 +1,33 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+leg_controller:
+  ros__parameters:
+    joints:
+      - motor27
+      - motor23
+      - motor22
+      - motor9
+      - motor8
+      - motor31
+      - motor12
+      - motor11
+      - motor10
+      - motor15
+      - motor14
+      - motor13
+      - motor0
+      - motor1
+      - motor16
+      - motor17
+      - motor18
+      - motor19
+      - motor20
+      - motor21

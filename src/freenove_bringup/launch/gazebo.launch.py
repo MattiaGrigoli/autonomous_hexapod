@@ -1,9 +1,10 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, ExecuteProcess, RegisterEventHandler
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+from launch.event_handlers import OnProcessExit
 
 def generate_launch_description():
     pkg_freenove_description = get_package_share_directory('freenove_description')
@@ -13,17 +14,20 @@ def generate_launch_description():
         value=[os.path.join(pkg_freenove_description, '..')]
     )
     
-    urdf_file = os.path.join(pkg_freenove_description, 'urdf', 'robot.urdf')
+    urdf_file = os.path.join(pkg_freenove_description, 'urdf', 'robot_gazebo.urdf')
 
     with open(urdf_file, 'r') as infp:
-        robot_desc = infp.read()
+        robot_desc = infp.read().replace(
+            '$(find freenove_description)', 
+            pkg_freenove_description
+        )
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
         output='screen',
-        parameters=[{'robot_description': robot_desc}]
+        parameters=[{'robot_description': robot_desc, 'use_sim_time': True}]
     )
 
     gazebo = IncludeLaunchDescription(
@@ -49,7 +53,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 5. NODO: Bridge per sincronizzare il tempo tra ROS 2 e Gazebo
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
@@ -57,10 +60,26 @@ def generate_launch_description():
         output='screen'
     )
 
+    joint_state_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster"],
+        output="screen",
+    )
+
+    leg_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["leg_controller"],
+        output="screen",
+    )
+
     return LaunchDescription([
         set_gz_resource_path,
         robot_state_publisher,
         gazebo,
         spawn_robot,
-        bridge
+        bridge,
+        joint_state_broadcaster_spawner,
+        leg_controller_spawner
     ])
