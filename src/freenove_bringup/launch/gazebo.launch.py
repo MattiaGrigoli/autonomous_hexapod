@@ -16,6 +16,8 @@ def generate_launch_description():
     
     urdf_file = os.path.join(pkg_freenove_description, 'urdf', 'robot_gazebo.urdf')
 
+    rviz_config_file = os.path.join(pkg_freenove_description, 'rviz', 'view_robot.rviz')
+
     with open(urdf_file, 'r') as infp:
         robot_desc = infp.read().replace(
             '$(find freenove_description)', 
@@ -56,7 +58,11 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+                    '/imu/data_raw@sensor_msgs/msg/Imu[gz.msgs.IMU',
+                    '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
+                    '/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo',
+                    '/ultrasonic/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',],
         output='screen'
     )
 
@@ -74,6 +80,22 @@ def generate_launch_description():
         output="screen",
     )
 
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': True}],
+        output='screen'
+    )
+
+    ultrasonic_simulation = Node(
+        package='freenove_simulation',
+        executable='ultrasonic_simulation',
+        name='ultrasonic_simulation',
+        output='screen'
+    )
+
     return LaunchDescription([
         set_gz_resource_path,
         robot_state_publisher,
@@ -81,5 +103,7 @@ def generate_launch_description():
         spawn_robot,
         bridge,
         joint_state_broadcaster_spawner,
-        leg_controller_spawner
+        leg_controller_spawner,
+        ultrasonic_simulation,
+        rviz_node
     ])
