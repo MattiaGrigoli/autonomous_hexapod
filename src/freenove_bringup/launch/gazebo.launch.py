@@ -112,5 +112,6 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         leg_controller_spawner,
         ultrasonic_simulation,
-        rviz_node
+        rviz_node,
+        kinematics_node
     ])
