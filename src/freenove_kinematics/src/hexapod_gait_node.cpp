@@ -12,6 +12,9 @@
 class HexapodGaitNode : public rclcpp::Node {
 public:
     HexapodGaitNode() : Node("hexapod_gait_node"), gait_phase_(0), head_pan_rad_(0.0), head_tilt_rad_(0.0) {
+        this->declare_parameter<bool>("sim", false);
+        sim = this->get_parameter("sim").as_bool();
+
         sub_cmd_vel_ = this->create_subscription<geometry_msgs::msg::Twist>(
             "/cmd_vel", 10, std::bind(&HexapodGaitNode::cmdVelCallback, this, std::placeholders::_1));
 
@@ -21,7 +24,10 @@ public:
         sub_body_height = this->create_subscription<std_msgs::msg::Float64>("/set_body_height", 10, std::bind(&HexapodGaitNode::set_body_height, this, std::placeholders::_1));
         sub_step_height = this->create_subscription<std_msgs::msg::Float64>("/set_step_height", 10, std::bind(&HexapodGaitNode::set_step_height, this, std::placeholders::_1));
 
-        pub_joint_states_ = this->create_publisher<sensor_msgs::msg::JointState>("/joint_states", 10);
+        if(!sim)
+        {
+            pub_joint_states_ = this->create_publisher<sensor_msgs::msg::JointState>("/joint_states", 10);
+        }
 
         joint_names_ = {
             "motor0", "motor1",
@@ -45,6 +51,8 @@ public:
     // "/position_controller/commands", 10);
 
         pub_leg_cmd_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("/leg_controller/commands", 10);
+
+        
     }
 
 private:
@@ -56,6 +64,7 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr sub_body_height;
     rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr sub_step_height;
+    bool sim;
 
     std::vector<std::string> joint_names_;
     std::vector<std::vector<double>> body_points_;
@@ -235,7 +244,10 @@ private:
             joint_state.position.push_back(tibia_rad);
         }
 
-        pub_joint_states_->publish(joint_state);
+        if(!sim)
+        {
+            pub_joint_states_->publish(joint_state);
+        }
 
         auto cmd_msg = std_msgs::msg::Float64MultiArray();
         cmd_msg.data = joint_state.position;

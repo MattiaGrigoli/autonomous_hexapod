@@ -100,7 +100,11 @@ def generate_launch_description():
         package='freenove_kinematics',
         executable='hexapod_gait_node',
         name='gait_node',
-        output='screen'
+        output='screen',
+        parameters=[{
+            'use_sim_time': True,
+            'sim': True 
+        }]
     )
 
     return LaunchDescription([
