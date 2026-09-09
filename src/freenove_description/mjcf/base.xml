@@ -1,0 +1,490 @@
+<mujoco model="big_hexapod">
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint damping="0.5" frictionloss="0.2" armature="0.01" />
+        <motor ctrllimited="true" ctrlrange="-10.0 10.0" forcerange="-10.0 10.0" />
+      </default>
+      <default class="visual">
+        <geom material="default_material" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom material="collision_material" condim="3" contype="1" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01" />
+      </default>
+    </default>
+  </default>
+
+  <compiler angle="radian" />
+
+  <asset>
+    <material name="bottomplate_material" rgba="0.980392 0.713725 0.00392157 1" />
+    <material name="acoplecircular_material" rgba="0.917647 0.917647 0.917647 1" />
+    <material name="servosupport_material" rgba="0.972549 0.529412 0.00392157 1" />
+    <material name="batteryholder_material" rgba="0.231373 0.380392 0.705882 1" />
+    <material name="batterysupport_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="logo_plate4_material" rgba="0.498039 0.498039 0.498039 1" />
+    <material name="logo_plate2_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="bottomcoxa_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="default_material" rgba="0.7 0.7 0.7 1" />
+    <material name="collision_material" rgba="1.0 0.28 0.1 0" />
+    <mesh name="bottomplate.stl" file="../meshes/bottomplate.stl" />
+    <mesh name="acoplecircular.stl" file="../meshes/acoplecircular.stl" />
+    <mesh name="servosupport.stl" file="../meshes/servosupport.stl" />
+    <mesh name="topplate.stl" file="../meshes/topplate.stl" />
+    <mesh name="batteryholder.stl" file="../meshes/batteryholder.stl" />
+    <mesh name="batterysupport.stl" file="../meshes/batterysupport.stl" />
+    <mesh name="logo_plate1.stl" file="../meshes/logo_plate1.stl" />
+    <mesh name="logo_plate4.stl" file="../meshes/logo_plate4.stl" />
+    <mesh name="logo_plate2.stl" file="../meshes/logo_plate2.stl" />
+    <mesh name="logo_plate3.stl" file="../meshes/logo_plate3.stl" />
+    <mesh name="topcoxa.stl" file="../meshes/topcoxa.stl" />
+    <mesh name="bottomcoxa.stl" file="../meshes/bottomcoxa.stl" />
+    <mesh name="bigservo4.stl" file="../meshes/bigservo4.stl" />
+    <mesh name="bigservo3.stl" file="../meshes/bigservo3.stl" />
+    <mesh name="bigservo2.stl" file="../meshes/bigservo2.stl" />
+    <mesh name="bigservo1.stl" file="../meshes/bigservo1.stl" />
+    <mesh name="femur.stl" file="../meshes/femur.stl" />
+    <mesh name="tibia.stl" file="../meshes/tibia.stl" />
+    <mesh name="yawhead.stl" file="../meshes/yawhead.stl" />
+    <mesh name="smallservo.stl" file="../meshes/smallservo.stl" />
+    <mesh name="necksupport.stl" file="../meshes/necksupport.stl" />
+    <mesh name="facesupport.stl" file="../meshes/facesupport.stl" />
+    <mesh name="camera.stl" file="../meshes/camera.stl" />
+    <mesh name="faceplate.stl" file="../meshes/faceplate.stl" />
+    <mesh name="headpitch.stl" file="../meshes/headpitch.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl" />
+    <mesh name="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl" file="../meshes/ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl" />
+  </asset>
+
+  <worldbody>
+    <body name="base_link_2" pos="0.00000000 0.00000000 0.28000000" quat="0.7071067811865476 0.7071067811865476 0 0" childclass="robot">
+      <inertial pos="-1.19252e-07 -0.0173565 0.000659493" mass="0.233494" fullinertia="0.000752837 0.000931158 0.000697545 1.527e-09 3.95e-10 4.11461e-07" /><freejoint name="floating_base" />
+      <geom name="base_link_2_collision_0" pos="0 -0.0599999 0" quat="0.7071054825112363 0.0 -0.7071080798594735 0.0" type="mesh" mesh="bottomplate.stl" class="collision" />
+      <geom name="base_link_2_collision_1" pos="-0.055 0 0.076" quat="1.1816182264375868e-06 0.4548248189499357 -6.034592486655886e-07 0.8905809250513946" type="mesh" mesh="acoplecircular.stl" class="collision" />
+      <geom name="base_link_2_collision_2" pos="-0.085 0 0" quat="9.381839456086127e-07 0.7071054825106139 9.381873917569988e-07 -0.7071080798588512" type="mesh" mesh="acoplecircular.stl" class="collision" />
+      <geom name="base_link_2_collision_3" pos="0.055 -0 -0.076" quat="1.1816182264375868e-06 -0.8905809250513946 6.034592486655886e-07 0.4548248189499357" type="mesh" mesh="acoplecircular.stl" class="collision" />
+      <geom name="base_link_2_collision_4" pos="-0 0.005 -0.083" quat="1.760384697849545e-12 -1.326794896676365e-06 0.9999999999982396 -1.326794896676365e-06" type="mesh" mesh="servosupport.stl" class="collision" />
+      <geom name="base_link_2_collision_5" pos="0.085 0 0" quat="9.381839456086127e-07 -0.7071054825106139 9.381873917569988e-07 0.7071080798588512" type="mesh" mesh="acoplecircular.stl" class="collision" />
+      <geom name="base_link_2_collision_6" pos="-0.055 -0 -0.076" quat="1.1816182264375868e-06 0.4548248189499357 6.034592486655886e-07 -0.8905809250513946" type="mesh" mesh="acoplecircular.stl" class="collision" />
+      <geom name="base_link_2_collision_7" pos="0 0 0" quat="0.7071054825112363 0.0 -0.7071080798594735 0.0" type="mesh" mesh="topplate.stl" class="collision" />
+      <geom name="base_link_2_collision_8" pos="0.055 0 0.076" quat="1.1816182264375868e-06 0.8905809250513946 -6.034592486655886e-07 0.4548248189499357" type="mesh" mesh="acoplecircular.stl" class="collision" />
+      <geom name="base_link_2_collision_9" pos="-0.0215 -0.0349999 -0.00075" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" type="mesh" mesh="batteryholder.stl" class="collision" />
+      <geom name="base_link_2_collision_10" pos="0 -0.0349999 0.007" quat="0.7071054825112363 0.0 -0.7071080798594735 0.0" type="mesh" mesh="batterysupport.stl" class="collision" />
+      <geom name="base_link_2_collision_11" pos="0.0215 -0.0349999 -0.00075" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" type="mesh" mesh="batteryholder.stl" class="collision" />
+      <geom name="base_link_2_collision_12" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" type="mesh" mesh="logo_plate1.stl" class="collision" />
+      <geom name="base_link_2_collision_13" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" type="mesh" mesh="logo_plate4.stl" class="collision" />
+      <geom name="base_link_2_collision_14" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" type="mesh" mesh="logo_plate2.stl" class="collision" />
+      <geom name="base_link_2_collision_15" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" type="mesh" mesh="logo_plate3.stl" class="collision" />
+      <geom name="base_link_2_visual_0" pos="0 -0.0599999 0" quat="0.7071054825112363 0.0 -0.7071080798594735 0.0" material="bottomplate_material" type="mesh" mesh="bottomplate.stl" class="visual" />
+      <geom name="base_link_2_visual_1" pos="-0.055 0 0.076" quat="1.1816182264375868e-06 0.4548248189499357 -6.034592486655886e-07 0.8905809250513946" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+      <geom name="base_link_2_visual_2" pos="-0.085 0 0" quat="9.381839456086127e-07 0.7071054825106139 9.381873917569988e-07 -0.7071080798588512" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+      <geom name="base_link_2_visual_3" pos="0.055 -0 -0.076" quat="1.1816182264375868e-06 -0.8905809250513946 6.034592486655886e-07 0.4548248189499357" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+      <geom name="base_link_2_visual_4" pos="-0 0.005 -0.083" quat="1.760384697849545e-12 -1.326794896676365e-06 0.9999999999982396 -1.326794896676365e-06" material="servosupport_material" type="mesh" mesh="servosupport.stl" class="visual" />
+      <geom name="base_link_2_visual_5" pos="0.085 0 0" quat="9.381839456086127e-07 -0.7071054825106139 9.381873917569988e-07 0.7071080798588512" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+      <geom name="base_link_2_visual_6" pos="-0.055 -0 -0.076" quat="1.1816182264375868e-06 0.4548248189499357 6.034592486655886e-07 -0.8905809250513946" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+      <geom name="base_link_2_visual_7" pos="0 0 0" quat="0.7071054825112363 0.0 -0.7071080798594735 0.0" material="bottomplate_material" type="mesh" mesh="topplate.stl" class="visual" />
+      <geom name="base_link_2_visual_8" pos="0.055 0 0.076" quat="1.1816182264375868e-06 0.8905809250513946 -6.034592486655886e-07 0.4548248189499357" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+      <geom name="base_link_2_visual_9" pos="-0.0215 -0.0349999 -0.00075" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" material="batteryholder_material" type="mesh" mesh="batteryholder.stl" class="visual" />
+      <geom name="base_link_2_visual_10" pos="0 -0.0349999 0.007" quat="0.7071054825112363 0.0 -0.7071080798594735 0.0" material="batterysupport_material" type="mesh" mesh="batterysupport.stl" class="visual" />
+      <geom name="base_link_2_visual_11" pos="0.0215 -0.0349999 -0.00075" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" material="batteryholder_material" type="mesh" mesh="batteryholder.stl" class="visual" />
+      <geom name="base_link_2_visual_12" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" material="acoplecircular_material" type="mesh" mesh="logo_plate1.stl" class="visual" />
+      <geom name="base_link_2_visual_13" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" material="logo_plate4_material" type="mesh" mesh="logo_plate4.stl" class="visual" />
+      <geom name="base_link_2_visual_14" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" material="logo_plate2_material" type="mesh" mesh="logo_plate2.stl" class="visual" />
+      <geom name="base_link_2_visual_15" pos="-0 0.035 -0" quat="9.381839456086127e-07 9.381873917569988e-07 -0.7071080798588512 -0.7071054825106139" material="servosupport_material" type="mesh" mesh="logo_plate3.stl" class="visual" />
+      <site name="base_link" pos="0 -0.0299999 0.00205788" quat="0.4999981633974483 -0.49999999999662686 -0.49999999999662686 -0.5000018366025516" />
+      <site name="imu" pos="-0.0083064 0.00833695 -0.039948" quat="0.7071054825112363 -0.7071080798594735 -0.0 0.0" />
+      <body name="coxaml" pos="-0.085 -0.0019 0" quat="0.4999981633974483 -0.49999999999662686 0.49999999999662686 0.5000018366025516">
+        <joint name="motor12" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="0.0105732 0.016596 -0.0264025" mass="0.082623" fullinertia="4.01323e-05 2.74452e-05 3.9625e-05 -2.33345e-06 -4.90162e-07 2.09445e-06" />
+        <geom name="coxaml_collision_0" pos="0.00999997 -7.403e-09 -0.0144" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="topcoxa.stl" class="collision" />
+        <geom name="coxaml_collision_1" pos="0.00249997 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" type="mesh" mesh="bottomcoxa.stl" class="collision" />
+        <geom name="coxaml_collision_2" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxaml_collision_3" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxaml_collision_4" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxaml_collision_5" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxaml_collision_6" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxaml_collision_7" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxaml_collision_8" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxaml_collision_9" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxaml_visual_0" pos="0.00999997 -7.403e-09 -0.0144" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="topcoxa.stl" class="visual" />
+        <geom name="coxaml_visual_1" pos="0.00249997 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" material="bottomcoxa_material" type="mesh" mesh="bottomcoxa.stl" class="visual" />
+        <geom name="coxaml_visual_2" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxaml_visual_3" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxaml_visual_4" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxaml_visual_5" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <geom name="coxaml_visual_6" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxaml_visual_7" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxaml_visual_8" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxaml_visual_9" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <body name="femurml" pos="-0.0119 0.033 -0.0394" quat="0.42060113050061454 0.5684126429539236 0.42060530629305637 0.5684126429539235">
+          <joint name="motor11" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="0.0427903 -0.0139281 -0.00394246" mass="0.0144792" fullinertia="1.91001e-06 1.27823e-05 1.45894e-05 3.95825e-06 0 -0" />
+          <geom name="femurml_collision_0" pos="0.0855806 -0.0278562 -0.0019" quat="0.19990452538304668 0.1999052596747181 0.6782622824224676 0.6782597910305661" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurml_collision_1" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurml_collision_2" pos="0.0427903 -0.0139281 -0.0069" quat="0.9876474983489059 0.0 0.0 -0.15669211532539867" type="mesh" mesh="femur.stl" class="collision" />
+          <geom name="femurml_visual_0" pos="0.0855806 -0.0278562 -0.0019" quat="0.19990452538304668 0.1999052596747181 0.6782622824224676 0.6782597910305661" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurml_visual_1" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurml_visual_2" pos="0.0427903 -0.0139281 -0.0069" quat="0.9876474983489059 0.0 0.0 -0.15669211532539867" material="batterysupport_material" type="mesh" mesh="femur.stl" class="visual" />
+          <body name="tibiaml" pos="0.0855806 -0.0278562 -0" quat="1.3122211975784094e-06 -0.9890158613537232 0.14780942456079263 -1.9611279018827505e-07">
+            <joint name="motor10" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+            <inertial pos="0.0168324 -3.78781e-05 -0.0222966" mass="0.0425984" fullinertia="7.26686e-06 3.03744e-05 2.67985e-05 4.51097e-07 -3.00842e-06 1.6772e-08" />
+            <geom name="tibiaml_collision_0" pos="0.00999997 -7.403e-09 -0.0119" quat="0.7071054825112363 0.0 -0.0 0.7071080798594735" type="mesh" mesh="tibia.stl" class="collision" />
+            <geom name="tibiaml_collision_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+            <geom name="tibiaml_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+            <geom name="tibiaml_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+            <geom name="tibiaml_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+            <geom name="tibiaml_visual_0" pos="0.00999997 -7.403e-09 -0.0119" quat="0.7071054825112363 0.0 -0.0 0.7071080798594735" material="bottomcoxa_material" type="mesh" mesh="tibia.stl" class="visual" />
+            <geom name="tibiaml_visual_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+            <geom name="tibiaml_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+            <geom name="tibiaml_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+            <geom name="tibiaml_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+          </body>
+        </body>
+      </body>
+      <body name="coxabl" pos="-0.055 -0.0019 0.076" quat="-0.21787745075046713 0.2178784355176641 -0.672703854009304 -0.6727019611922368">
+        <joint name="motor9" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="0.0105732 0.016596 -0.0264025" mass="0.082623" fullinertia="4.01323e-05 2.74452e-05 3.9625e-05 -2.33345e-06 -4.90162e-07 2.09445e-06" />
+        <geom name="coxabl_collision_0" pos="0.00249997 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" type="mesh" mesh="bottomcoxa.stl" class="collision" />
+        <geom name="coxabl_collision_1" pos="0.00999997 -7.403e-09 -0.0144" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="topcoxa.stl" class="collision" />
+        <geom name="coxabl_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxabl_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxabl_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxabl_collision_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxabl_collision_6" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxabl_collision_7" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxabl_collision_8" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxabl_collision_9" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxabl_visual_0" pos="0.00249997 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" material="bottomcoxa_material" type="mesh" mesh="bottomcoxa.stl" class="visual" />
+        <geom name="coxabl_visual_1" pos="0.00999997 -7.403e-09 -0.0144" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="topcoxa.stl" class="visual" />
+        <geom name="coxabl_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxabl_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxabl_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxabl_visual_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <geom name="coxabl_visual_6" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxabl_visual_7" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxabl_visual_8" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxabl_visual_9" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <body name="femurbl" pos="-0.0119 0.033 -0.0394" quat="0.5862165509046982 0.39540922166391945 0.58621945574304 0.39540922166391945">
+          <joint name="motor8" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="0.0414881 0.0174281 -0.00394246" mass="0.0144792" fullinertia="2.63889e-06 1.20534e-05 1.45894e-05 -4.8022e-06 -0 0" />
+          <geom name="femurbl_collision_0" pos="0.0414881 0.0174281 -0.0069" quat="0.9802952883819728 0.0 -0.0 0.1975377117820921" type="mesh" mesh="femur.stl" class="collision" />
+          <geom name="femurbl_collision_1" pos="0.0829762 0.0348561 -0.0019" quat="0.596775553819365 0.5967777459024007 -0.37928638071805476 -0.37928498752394424" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurbl_collision_2" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurbl_visual_0" pos="0.0414881 0.0174281 -0.0069" quat="0.9802952883819728 0.0 -0.0 0.1975377117820921" material="batterysupport_material" type="mesh" mesh="femur.stl" class="visual" />
+          <geom name="femurbl_visual_1" pos="0.0829762 0.0348561 -0.0019" quat="0.596775553819365 0.5967777459024007 -0.37928638071805476 -0.37928498752394424" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurbl_visual_2" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <body name="tibiabl" pos="0.0829762 0.0348561 -0" quat="1.3024179925570657e-06 0.9816272249895922 0.19080878165711423 2.5316411774413965e-07">
+            <joint name="motor31" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+            <inertial pos="0.0168324 -3.78781e-05 -0.0222966" mass="0.0425984" fullinertia="7.26686e-06 3.03744e-05 2.67985e-05 4.51097e-07 -3.00842e-06 1.6772e-08" />
+            <geom name="tibiabl_collision_0" pos="0.00999997 -7.403e-09 -0.0119" quat="0.7071054825112363 0.0 0.0 0.7071080798594735" type="mesh" mesh="tibia.stl" class="collision" />
+            <geom name="tibiabl_collision_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+            <geom name="tibiabl_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+            <geom name="tibiabl_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+            <geom name="tibiabl_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+            <geom name="tibiabl_visual_0" pos="0.00999997 -7.403e-09 -0.0119" quat="0.7071054825112363 0.0 0.0 0.7071080798594735" material="bottomcoxa_material" type="mesh" mesh="tibia.stl" class="visual" />
+            <geom name="tibiabl_visual_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+            <geom name="tibiabl_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+            <geom name="tibiabl_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+            <geom name="tibiabl_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+          </body>
+        </body>
+      </body>
+      <body name="coxabr" pos="0.055 -0.0019 0.076" quat="0.672701672112955 -0.6727041430887082 0.21787754297743184 0.21787834328780445">
+        <joint name="motor22" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="0.0105732 -0.016596 -0.0264025" mass="0.082623" fullinertia="4.01323e-05 2.74452e-05 3.9625e-05 2.33345e-06 -4.90162e-07 -2.09445e-06" />
+        <geom name="coxabr_collision_0" pos="0.00999997 -7.403e-09 -0.0094" quat="0.4999981633974483 -0.49999999999662686 0.5000018366025516 -0.49999999999662686" type="mesh" mesh="topcoxa.stl" class="collision" />
+        <geom name="coxabr_collision_1" pos="-0.00250003 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="bottomcoxa.stl" class="collision" />
+        <geom name="coxabr_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxabr_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxabr_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxabr_collision_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxabr_collision_6" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxabr_collision_7" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxabr_collision_8" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxabr_collision_9" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxabr_visual_0" pos="0.00999997 -7.403e-09 -0.0094" quat="0.4999981633974483 -0.49999999999662686 0.5000018366025516 -0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="topcoxa.stl" class="visual" />
+        <geom name="coxabr_visual_1" pos="-0.00250003 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="bottomcoxa_material" type="mesh" mesh="bottomcoxa.stl" class="visual" />
+        <geom name="coxabr_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxabr_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxabr_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxabr_visual_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <geom name="coxabr_visual_6" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxabr_visual_7" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxabr_visual_8" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxabr_visual_9" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <body name="femurbr" pos="-0.0119 -0.033 -0.0394" quat="0.5862165509046982 -0.39540922166391945 0.58621945574304 -0.39540922166391945">
+          <joint name="motor23" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="0.0414881 -0.0174281 -0.00394246" mass="0.0144792" fullinertia="2.63889e-06 1.20534e-05 1.45894e-05 4.8022e-06 -0 -0" />
+          <geom name="femurbr_collision_0" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurbr_collision_1" pos="0.0414881 -0.0174281 -0.0069" quat="0.9802952883819728 0.0 -0.0 -0.1975377117820921" type="mesh" mesh="femur.stl" class="collision" />
+          <geom name="femurbr_collision_2" pos="0.0829762 -0.0348561 -0.0019" quat="0.596775553819365 0.5967777459024007 0.37928638071805476 0.37928498752394424" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurbr_visual_0" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurbr_visual_1" pos="0.0414881 -0.0174281 -0.0069" quat="0.9802952883819728 0.0 -0.0 -0.1975377117820921" material="batterysupport_material" type="mesh" mesh="femur.stl" class="visual" />
+          <geom name="femurbr_visual_2" pos="0.0829762 -0.0348561 -0.0019" quat="0.596775553819365 0.5967777459024007 0.37928638071805476 0.37928498752394424" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <body name="tibiabr" pos="0.0829762 -0.0348561 -0" quat="1.3024179925570657e-06 -0.9816272249895922 0.19080878165711423 -2.5316411774413965e-07">
+            <joint name="motor27" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+            <inertial pos="0.0168324 3.7861e-05 -0.0222966" mass="0.0425984" fullinertia="7.26686e-06 3.03744e-05 2.67985e-05 -4.51098e-07 -3.00842e-06 -1.6771e-08" />
+            <geom name="tibiabr_collision_0" pos="0.00999997 -7.403e-09 -0.0119" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" type="mesh" mesh="tibia.stl" class="collision" />
+            <geom name="tibiabr_collision_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+            <geom name="tibiabr_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+            <geom name="tibiabr_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+            <geom name="tibiabr_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+            <geom name="tibiabr_visual_0" pos="0.00999997 -7.403e-09 -0.0119" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" material="bottomcoxa_material" type="mesh" mesh="tibia.stl" class="visual" />
+            <geom name="tibiabr_visual_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+            <geom name="tibiabr_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+            <geom name="tibiabr_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+            <geom name="tibiabr_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+          </body>
+        </body>
+      </body>
+      <body name="coxamr" pos="0.085 -0.0019 0" quat="0.4999981633974483 -0.49999999999662686 0.49999999999662686 0.5000018366025516">
+        <joint name="motor19" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="0.0105732 -0.016596 -0.0264025" mass="0.082623" fullinertia="4.01323e-05 2.74452e-05 3.9625e-05 2.33345e-06 -4.90162e-07 -2.09445e-06" />
+        <geom name="coxamr_collision_0" pos="-0.00250003 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="bottomcoxa.stl" class="collision" />
+        <geom name="coxamr_collision_1" pos="0.00999997 -7.403e-09 -0.0094" quat="0.4999981633974483 -0.49999999999662686 0.5000018366025516 -0.49999999999662686" type="mesh" mesh="topcoxa.stl" class="collision" />
+        <geom name="coxamr_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxamr_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxamr_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxamr_collision_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxamr_collision_6" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxamr_collision_7" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxamr_collision_8" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxamr_collision_9" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxamr_visual_0" pos="-0.00250003 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="bottomcoxa_material" type="mesh" mesh="bottomcoxa.stl" class="visual" />
+        <geom name="coxamr_visual_1" pos="0.00999997 -7.403e-09 -0.0094" quat="0.4999981633974483 -0.49999999999662686 0.5000018366025516 -0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="topcoxa.stl" class="visual" />
+        <geom name="coxamr_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxamr_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxamr_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxamr_visual_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <geom name="coxamr_visual_6" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxamr_visual_7" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxamr_visual_8" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxamr_visual_9" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <body name="femurmr" pos="-0.0119 -0.033 -0.0394" quat="0.5036661399551025 -0.4963049295134147 0.5036697860147022 -0.49630492951341476">
+          <joint name="motor20" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="0.045 0 -0.00394246" mass="0.0144792" fullinertia="6.21615e-07 1.40707e-05 1.45894e-05 -0 0 0" />
+          <geom name="femurmr_collision_0" pos="0.09 0 -0.0019" quat="9.381839456086127e-07 9.381873917569988e-07 0.7071080798588512 0.7071054825106139" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurmr_collision_1" pos="0.045 0 -0.0019" quat="1.3267948966775328e-06 -0.9999999999991198 0.0 0.0" type="mesh" mesh="femur.stl" class="collision" />
+          <geom name="femurmr_collision_2" pos="-0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurmr_visual_0" pos="0.09 0 -0.0019" quat="9.381839456086127e-07 9.381873917569988e-07 0.7071080798588512 0.7071054825106139" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurmr_visual_1" pos="0.045 0 -0.0019" quat="1.3267948966775328e-06 -0.9999999999991198 0.0 0.0" material="batterysupport_material" type="mesh" mesh="femur.stl" class="visual" />
+          <geom name="femurmr_visual_2" pos="-0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <body name="tibiamr" pos="0.09 0 -0" quat="1.3267589305870807e-06 0.9999728925007851 -0.007363033468132955 -9.769235229593278e-09">
+            <joint name="motor21" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+            <inertial pos="0.0168324 3.7861e-05 -0.0222966" mass="0.0425984" fullinertia="7.26686e-06 3.03744e-05 2.67985e-05 -4.51098e-07 -3.00842e-06 -1.6771e-08" />
+            <geom name="tibiamr_collision_0" pos="0.00999997 -7.403e-09 -0.0119" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" type="mesh" mesh="tibia.stl" class="collision" />
+            <geom name="tibiamr_collision_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+            <geom name="tibiamr_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+            <geom name="tibiamr_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+            <geom name="tibiamr_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+            <geom name="tibiamr_visual_0" pos="0.00999997 -7.403e-09 -0.0119" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" material="bottomcoxa_material" type="mesh" mesh="tibia.stl" class="visual" />
+            <geom name="tibiamr_visual_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+            <geom name="tibiamr_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+            <geom name="tibiamr_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+            <geom name="tibiamr_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+          </body>
+        </body>
+      </body>
+      <body name="coxafr" pos="0.055 -0.0019 -0.076" quat="0.21787923582475824 -0.21787665043681606 0.6727044321669282 0.6727013830324889">
+        <joint name="motor16" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="0.0105732 -0.016596 -0.0264025" mass="0.082623" fullinertia="4.01323e-05 2.74452e-05 3.9625e-05 2.33345e-06 -4.90162e-07 -2.09445e-06" />
+        <geom name="coxafr_collision_0" pos="-0.00250003 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="bottomcoxa.stl" class="collision" />
+        <geom name="coxafr_collision_1" pos="0.00999997 -7.403e-09 -0.0094" quat="0.4999981633974483 -0.49999999999662686 0.5000018366025516 -0.49999999999662686" type="mesh" mesh="topcoxa.stl" class="collision" />
+        <geom name="coxafr_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxafr_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxafr_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxafr_collision_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxafr_collision_6" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxafr_collision_7" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxafr_collision_8" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxafr_collision_9" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxafr_visual_0" pos="-0.00250003 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="bottomcoxa_material" type="mesh" mesh="bottomcoxa.stl" class="visual" />
+        <geom name="coxafr_visual_1" pos="0.00999997 -7.403e-09 -0.0094" quat="0.4999981633974483 -0.49999999999662686 0.5000018366025516 -0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="topcoxa.stl" class="visual" />
+        <geom name="coxafr_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxafr_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxafr_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxafr_visual_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <geom name="coxafr_visual_6" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxafr_visual_7" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxafr_visual_8" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxafr_visual_9" pos="0.0251 -0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <body name="femurfr" pos="-0.0119 -0.033 -0.0394" quat="0.7071054825112363 -0.0 0.7071080798594735 0.0">
+          <joint name="motor17" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="-0 -0.045 -0.00394246" mass="0.0144792" fullinertia="1.40707e-05 6.21615e-07 1.45894e-05 -0 0 0" />
+          <geom name="femurfr_collision_0" pos="-0 -0.09 -0.0019" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurfr_collision_1" pos="-0 -0.045 -0.0019" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" type="mesh" mesh="femur.stl" class="collision" />
+          <geom name="femurfr_collision_2" pos="0 0 -0.0019" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurfr_visual_0" pos="-0 -0.09 -0.0019" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurfr_visual_1" pos="-0 -0.045 -0.0019" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" material="batterysupport_material" type="mesh" mesh="femur.stl" class="visual" />
+          <geom name="femurfr_visual_2" pos="0 0 -0.0019" quat="0.7071054825112363 0.7071080798594735 0.0 -0.0" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <body name="tibiafr" pos="-0 -0.09 -0" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07">
+            <joint name="motor18" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+            <inertial pos="0.0168324 3.7861e-05 -0.0222966" mass="0.0425984" fullinertia="7.26686e-06 3.03744e-05 2.67985e-05 -4.51098e-07 -3.00842e-06 -1.6771e-08" />
+            <geom name="tibiafr_collision_0" pos="0.00999997 -7.403e-09 -0.0119" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" type="mesh" mesh="tibia.stl" class="collision" />
+            <geom name="tibiafr_collision_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+            <geom name="tibiafr_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+            <geom name="tibiafr_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+            <geom name="tibiafr_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+            <geom name="tibiafr_visual_0" pos="0.00999997 -7.403e-09 -0.0119" quat="9.381839456086127e-07 -0.7071054825106139 0.7071080798588512 -9.381873917569988e-07" material="bottomcoxa_material" type="mesh" mesh="tibia.stl" class="visual" />
+            <geom name="tibiafr_visual_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+            <geom name="tibiafr_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+            <geom name="tibiafr_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+            <geom name="tibiafr_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+          </body>
+        </body>
+      </body>
+      <body name="coxafl" pos="-0.055 -0.0019 -0.076" quat="0.672701672112955 -0.6727041430887082 0.21787754297743184 0.21787834328780445">
+        <joint name="motor15" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="0.0105732 0.016596 -0.0264025" mass="0.082623" fullinertia="4.01323e-05 2.74452e-05 3.9625e-05 -2.33345e-06 -4.90162e-07 2.09445e-06" />
+        <geom name="coxafl_collision_0" pos="0.00999997 -7.403e-09 -0.0144" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" type="mesh" mesh="topcoxa.stl" class="collision" />
+        <geom name="coxafl_collision_1" pos="0.00249997 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" type="mesh" mesh="bottomcoxa.stl" class="collision" />
+        <geom name="coxafl_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxafl_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxafl_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxafl_collision_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxafl_collision_6" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo4.stl" class="collision" />
+        <geom name="coxafl_collision_7" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo3.stl" class="collision" />
+        <geom name="coxafl_collision_8" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo2.stl" class="collision" />
+        <geom name="coxafl_collision_9" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="bigservo1.stl" class="collision" />
+        <geom name="coxafl_visual_0" pos="0.00999997 -7.403e-09 -0.0144" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="topcoxa.stl" class="visual" />
+        <geom name="coxafl_visual_1" pos="0.00249997 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" material="bottomcoxa_material" type="mesh" mesh="bottomcoxa.stl" class="visual" />
+        <geom name="coxafl_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxafl_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxafl_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxafl_visual_5" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <geom name="coxafl_visual_6" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+        <geom name="coxafl_visual_7" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+        <geom name="coxafl_visual_8" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+        <geom name="coxafl_visual_9" pos="0.0251 0.033 -0.0294" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+        <body name="femurfl" pos="-0.0119 0.033 -0.0394" quat="0.7071054825112363 0.0 0.7071080798594735 0.0">
+          <joint name="motor14" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="-0 0.045 -0.00394246" mass="0.0144792" fullinertia="1.40707e-05 6.21615e-07 1.45894e-05 0 0 0" />
+          <geom name="femurfl_collision_0" pos="-0 0.045 -0.0069" quat="0.7071054825112363 0.0 -0.0 0.7071080798594735" type="mesh" mesh="femur.stl" class="collision" />
+          <geom name="femurfl_collision_1" pos="-0 0.09 -0.0019" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurfl_collision_2" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="acoplecircular.stl" class="collision" />
+          <geom name="femurfl_visual_0" pos="-0 0.045 -0.0069" quat="0.7071054825112363 0.0 -0.0 0.7071080798594735" material="batterysupport_material" type="mesh" mesh="femur.stl" class="visual" />
+          <geom name="femurfl_visual_1" pos="-0 0.09 -0.0019" quat="0.4999981633974483 0.49999999999662686 -0.5000018366025516 -0.49999999999662686" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <geom name="femurfl_visual_2" pos="0 -0 -0.0019" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="acoplecircular.stl" class="visual" />
+          <body name="tibiafl" pos="-0 0.09 -0" quat="9.381839456086127e-07 -0.7071054825106139 -0.7071080798588512 9.381873917569988e-07">
+            <joint name="motor13" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+            <inertial pos="0.0168324 -3.78781e-05 -0.0222966" mass="0.0425984" fullinertia="7.26686e-06 3.03744e-05 2.67985e-05 4.51097e-07 -3.00842e-06 1.6772e-08" />
+            <geom name="tibiafl_collision_0" pos="0.00999997 -7.403e-09 -0.0119" quat="0.7071054825112363 -0.0 0.0 0.7071080798594735" type="mesh" mesh="tibia.stl" class="collision" />
+            <geom name="tibiafl_collision_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo4.stl" class="collision" />
+            <geom name="tibiafl_collision_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo3.stl" class="collision" />
+            <geom name="tibiafl_collision_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo2.stl" class="collision" />
+            <geom name="tibiafl_collision_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" type="mesh" mesh="bigservo1.stl" class="collision" />
+            <geom name="tibiafl_visual_0" pos="0.00999997 -7.403e-09 -0.0119" quat="0.7071054825112363 -0.0 0.0 0.7071080798594735" material="bottomcoxa_material" type="mesh" mesh="tibia.stl" class="visual" />
+            <geom name="tibiafl_visual_1" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="servosupport_material" type="mesh" mesh="bigservo4.stl" class="visual" />
+            <geom name="tibiafl_visual_2" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="logo_plate2_material" type="mesh" mesh="bigservo3.stl" class="visual" />
+            <geom name="tibiafl_visual_3" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="acoplecircular_material" type="mesh" mesh="bigservo2.stl" class="visual" />
+            <geom name="tibiafl_visual_4" pos="0.00999997 -7.403e-09 -0.037" quat="0.7071054825112363 0.7071080798594735 -0.0 0.0" material="batteryholder_material" type="mesh" mesh="bigservo1.stl" class="visual" />
+          </body>
+        </body>
+      </body>
+      <body name="neck" pos="-0 0.0068 -0.083" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516">
+        <joint name="motor1" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+        <inertial pos="-0.0052 -0.00245004 -0.0267393" mass="0.0239856" fullinertia="5.63655e-06 6.26446e-06 2.69831e-06 -3.9842e-08 -1.13883e-07 -3.5041e-08" />
+        <geom name="neck_collision_0" pos="-0.0052 0 -0.0116" quat="0.7071054825112363 0.0 -0.0 -0.7071080798594735" type="mesh" mesh="yawhead.stl" class="collision" />
+        <geom name="neck_collision_1" pos="-0.0052 0.0125 -0.0416" quat="1.3267948966775328e-06 0.0 -0.0 -0.9999999999991198" type="mesh" mesh="smallservo.stl" class="collision" />
+        <geom name="neck_collision_2" pos="-0.0052 0 -0.0302" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="smallservo.stl" class="collision" />
+        <geom name="neck_collision_3" pos="-0.0052 -0.0111 -0.0516" quat="0.4999981633974483 -0.49999999999662686 -0.49999999999662686 -0.5000018366025516" type="mesh" mesh="necksupport.stl" class="collision" />
+        <geom name="neck_visual_0" pos="-0.0052 0 -0.0116" quat="0.7071054825112363 0.0 -0.0 -0.7071080798594735" material="bottomcoxa_material" type="mesh" mesh="yawhead.stl" class="visual" />
+        <geom name="neck_visual_1" pos="-0.0052 0.0125 -0.0416" quat="1.3267948966775328e-06 0.0 -0.0 -0.9999999999991198" material="acoplecircular_material" type="mesh" mesh="smallservo.stl" class="visual" />
+        <geom name="neck_visual_2" pos="-0.0052 0 -0.0302" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="acoplecircular_material" type="mesh" mesh="smallservo.stl" class="visual" />
+        <geom name="neck_visual_3" pos="-0.0052 -0.0111 -0.0516" quat="0.4999981633974483 -0.49999999999662686 -0.49999999999662686 -0.5000018366025516" material="batteryholder_material" type="mesh" mesh="necksupport.stl" class="visual" />
+        <body name="face" pos="-0.0104 -0.0177 -0.0416" quat="0.4999981633974483 -0.49999999999662686 -0.49999999999662686 -0.5000018366025516">
+          <joint name="motor0" type="hinge" ref="0.0" class="motor" range="-3.141592653589793 3.141592653589793" axis="0 0 1" />
+          <inertial pos="-0.00338941 -0.0244654 0.0131434" mass="0.0345134" fullinertia="1.16067e-05 1.55511e-05 1.05883e-05 -5.06469e-07 4.61645e-07 2.30014e-06" />
+          <geom name="face_collision_0" pos="-0.012 -0.024 0.0167" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" type="mesh" mesh="facesupport.stl" class="collision" />
+          <geom name="face_collision_1" pos="0.0107972 -0.023 0.0167" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="camera.stl" class="collision" />
+          <geom name="face_collision_2" pos="-0.012 -0.029 0.0167" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" type="mesh" mesh="faceplate.stl" class="collision" />
+          <geom name="face_collision_3" pos="0 -0 -0.0068" quat="1.3267948966775328e-06 0.9999999999991198 -0.0 0.0" type="mesh" mesh="headpitch.stl" class="collision" />
+          <geom name="face_collision_4" pos="0 0 -0.0018" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" type="mesh" mesh="servosupport.stl" class="collision" />
+          <geom name="face_collision_5" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl" class="collision" />
+          <geom name="face_collision_6" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl" class="collision" />
+          <geom name="face_collision_7" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl" class="collision" />
+          <geom name="face_collision_8" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl" class="collision" />
+          <geom name="face_collision_9" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl" class="collision" />
+          <geom name="face_collision_10" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl" class="collision" />
+          <geom name="face_collision_11" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl" class="collision" />
+          <geom name="face_visual_0" pos="-0.012 -0.024 0.0167" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" material="logo_plate4_material" type="mesh" mesh="facesupport.stl" class="visual" />
+          <geom name="face_visual_1" pos="0.0107972 -0.023 0.0167" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate4_material" type="mesh" mesh="camera.stl" class="visual" />
+          <geom name="face_visual_2" pos="-0.012 -0.029 0.0167" quat="9.381839456086127e-07 -9.381873917569988e-07 -0.7071080798588512 0.7071054825106139" material="servosupport_material" type="mesh" mesh="faceplate.stl" class="visual" />
+          <geom name="face_visual_3" pos="0 -0 -0.0068" quat="1.3267948966775328e-06 0.9999999999991198 -0.0 0.0" material="batterysupport_material" type="mesh" mesh="headpitch.stl" class="visual" />
+          <geom name="face_visual_4" pos="0 0 -0.0018" quat="0.7071054825112363 0.7071080798594735 0.0 0.0" material="servosupport_material" type="mesh" mesh="servosupport.stl" class="visual" />
+          <geom name="face_visual_5" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate2_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl" class="visual" />
+          <geom name="face_visual_6" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="bottomplate_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl" class="visual" />
+          <geom name="face_visual_7" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="servosupport_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl" class="visual" />
+          <geom name="face_visual_8" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="batteryholder_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl" class="visual" />
+          <geom name="face_visual_9" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl" class="visual" />
+          <geom name="face_visual_10" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="acoplecircular_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl" class="visual" />
+          <geom name="face_visual_11" pos="-0.0123223 0.0223 0.0239775" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" material="logo_plate4_material" type="mesh" mesh="ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl" class="visual" />
+          <site name="camera" pos="0.0123472 -0.0288 0.0167" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" />
+          <site name="ultrasonic" pos="-0.012 -0.0301724 0.0297" quat="0.4999981633974483 0.49999999999662686 -0.49999999999662686 0.5000018366025516" />
+        </body>
+      </body>
+      <site name="base_link_2_site" pos="0 0 0" quat="1 0 0 0" />
+      <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
+      <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="motor12_ctrl" joint="motor12" class="motor" />
+    <motor name="motor11_ctrl" joint="motor11" class="motor" />
+    <motor name="motor10_ctrl" joint="motor10" class="motor" />
+    <motor name="motor9_ctrl" joint="motor9" class="motor" />
+    <motor name="motor8_ctrl" joint="motor8" class="motor" />
+    <motor name="motor31_ctrl" joint="motor31" class="motor" />
+    <motor name="motor22_ctrl" joint="motor22" class="motor" />
+    <motor name="motor23_ctrl" joint="motor23" class="motor" />
+    <motor name="motor27_ctrl" joint="motor27" class="motor" />
+    <motor name="motor19_ctrl" joint="motor19" class="motor" />
+    <motor name="motor20_ctrl" joint="motor20" class="motor" />
+    <motor name="motor21_ctrl" joint="motor21" class="motor" />
+    <motor name="motor16_ctrl" joint="motor16" class="motor" />
+    <motor name="motor17_ctrl" joint="motor17" class="motor" />
+    <motor name="motor18_ctrl" joint="motor18" class="motor" />
+    <motor name="motor15_ctrl" joint="motor15" class="motor" />
+    <motor name="motor14_ctrl" joint="motor14" class="motor" />
+    <motor name="motor13_ctrl" joint="motor13" class="motor" />
+    <motor name="motor1_ctrl" joint="motor1" class="motor" />
+    <motor name="motor0_ctrl" joint="motor0" class="motor" />
+  </actuator>
+
+  <contact>
+    <exclude body1="femurml" body2="tibiaml" />
+    <exclude body1="coxaml" body2="femurml" />
+    <exclude body1="base_link_2" body2="coxaml" />
+    <exclude body1="femurbl" body2="tibiabl" />
+    <exclude body1="coxabl" body2="femurbl" />
+    <exclude body1="base_link_2" body2="coxabl" />
+    <exclude body1="femurbr" body2="tibiabr" />
+    <exclude body1="coxabr" body2="femurbr" />
+    <exclude body1="base_link_2" body2="coxabr" />
+    <exclude body1="femurmr" body2="tibiamr" />
+    <exclude body1="coxamr" body2="femurmr" />
+    <exclude body1="base_link_2" body2="coxamr" />
+    <exclude body1="femurfr" body2="tibiafr" />
+    <exclude body1="coxafr" body2="femurfr" />
+    <exclude body1="base_link_2" body2="coxafr" />
+    <exclude body1="femurfl" body2="tibiafl" />
+    <exclude body1="coxafl" body2="femurfl" />
+    <exclude body1="base_link_2" body2="coxafl" />
+    <exclude body1="neck" body2="face" />
+    <exclude body1="base_link_2" body2="neck" />
+  </contact>
+
+  <sensor>
+    <framepos name="base_link_2_site_pos" objtype="site" objname="base_link_2_site" />
+    <framequat name="base_link_2_site_quat" objtype="site" objname="base_link_2_site" />
+    <framelinvel name="base_link_2_site_linvel" objtype="site" objname="base_link_2_site" />
+    <frameangvel name="base_link_2_site_angvel" objtype="site" objname="base_link_2_site" />
+    <velocimeter name="base_link_2_site_vel" site="base_link_2_site" />
+  </sensor>
+</mujoco>
